@@ -42,6 +42,7 @@ public class AES {
         System.out.println("Original String: " + originalString);
         System.out.println("Encrypted String: " + encryptedString);
         System.out.println("Decrypted String: " + decryptedString);
+        sc.close();
     }
 }
 
