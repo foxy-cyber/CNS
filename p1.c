@@ -1,24 +1,43 @@
-#include <stdio.h>
+#include<stdio.h> 
 
-int main() {
-    int i=0;
-    char str[] = "Hello world";
-    printf("Original string: %s\n", str);
-    printf("AND with 127: ");
-    while(str[i] != '\0')
-        printf("%c", str[i++] & 127);
-    printf("\n");
-    printf("OR with 127: ");
-    i=0;
-    while(str[i] != '\0')
-        printf("%c", str[i++] | 127);
-    printf("\n");
+#include<stdlib.h> 
 
-    printf("XOR with 127: ");
-    i=0;
-    while(str[i] != '\0')
-        printf("%c", str[i++] ^ 127);
-    printf("\n");
+#include<string.h> 
 
-    return 0;
+void main(){ 
+
+    char str[]="Hello World"; 
+
+    int len=strlen(str); 
+
+    char str1[11],str2[12],str3[13]; 
+
+ 
+
+    printf("original string is %s \n",str); 
+
+    printf("after and op \n"); 
+
+    for(int i=0;i<len;i++){ 
+
+    printf("%c=%d \n",str[i],str[i]&127); 
+
+} 
+
+printf("after or op\n"); 
+
+for(int i=0;i<len;i++){ 
+
+printf("%c=%d \n",str[i],str[i]|127); 
+
+} 
+
+printf("after XOR op \n"); 
+
+for(int i=0;i<len;i++){ 
+
+printf("%c=%d\n",str[i],str[i]^127); 
+
+} 
+
 }
