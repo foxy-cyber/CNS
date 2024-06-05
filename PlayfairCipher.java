@@ -39,11 +39,11 @@ class PlayfairCipher {
             int col2 = positions[b - 'A'].x;
 
             if (row1 == row2) {
-                col1 = (col1 + dir) % 5;
-                col2 = (col2 + dir) % 5;
+                col1 = (col1 + dir + 5) % 5;
+                col2 = (col2 + dir + 5) % 5;
             } else if (col1 == col2) {
-                row1 = (row1 + dir) % 5;
-                row2 = (row2 + dir) % 5;
+                row1 = (row1 + dir + 5) % 5;
+                row2 = (row2 + dir + 5) % 5;
             } else {
                 int tmp = col1;
                 col1 = col2;
@@ -60,7 +60,7 @@ class PlayfairCipher {
         StringBuilder sb = new StringBuilder(s);
         for (int i = 0; i < sb.length(); i += 2) {
             if (i == sb.length() - 1) {
-                sb.append(sb.length() % 2 == 1 ? 'Z' : "");
+                sb.append('Z');
             } else if (sb.charAt(i) == sb.charAt(i + 1)) {
                 sb.insert(i + 1, 'Z');
             }
@@ -69,7 +69,8 @@ class PlayfairCipher {
     }
 
     private static String decode(String s) {
-        return codec(new StringBuilder(s), 4);
+        String decoded = codec(new StringBuilder(s), -1);
+        return decoded.replaceAll("Z", "");
     }
 
     public static void main(String[] args) {
