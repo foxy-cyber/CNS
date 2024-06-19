@@ -16,11 +16,7 @@
                 return ((Math.pow(a, b)) % p);
         }
 
-        // Driver code
         var P, G, x, a, y, b, ka, kb;
-
-        // Both the persons will agree upon the
-        // public keys G and P
 
         P = parseInt(prompt("Enter a prime number P:"));
         document.write("The value of P: " + P + "<br>");
@@ -28,20 +24,14 @@
         G = parseInt(prompt("Enter a primitive root G:"));
         document.write("The value of G: " + G + "<br>");
 
-        // Alice will choose the private key a
-        // a is the chosen private key
         a = parseInt(prompt("Enter the private key for Alice (a):"));
         document.write("The private key (a) for Alice: " + a + "<br>");
 
-        // Gets the generated key
         x = power(G, a, P);
 
-        // Bob will choose the private key b
-        // b is the chosen private key
         b = parseInt(prompt("Enter the private key for Bob (b):"));
         document.write("The private key (b) for Bob: " + b + "<br><br>");
 
-        // Gets the generated key
         y = power(G, b, P);
         document.write("Public key for Alice:" + x + "<br>")
         document.write("Public key for Bob:" + y + "<br><br>")
