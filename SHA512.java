@@ -24,5 +24,6 @@ public class SHA512 {
         System.out.println("Enter the string to hash: ");
         String input = sc.nextLine();
         System.out.println("\nSHA-512 Hash: " + encrypt(input));
+        sc.close();
     }
 }
